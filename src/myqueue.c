@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 
-#include <mystack.h>
+#include <my-stdlib/myqueue.h>
 
 void
 myqueue_print(void)

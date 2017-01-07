@@ -1,11 +1,11 @@
 
-#include <mystack.h>
+#include <my-stdlib/mystack.h>
 
 #include <stddef.h>
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <myalloc.h>
+#include <my-stdlib/myalloc.h>
 
 #define MYSTACK_INIT_CAPACITY 16
 
