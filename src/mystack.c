@@ -15,7 +15,7 @@ mystack_int32_new(void)
     MyStackInt32 *stack = (MyStackInt32 *)mycalloc(1, sizeof(*stack));
     stack->capacity = MYSTACK_INIT_CAPACITY;
     stack->items = (int32_t *)mycalloc(stack->capacity,
-                                             sizeof(*(stack->items)));
+                                       sizeof(*(stack->items)));
     return stack;
 }
 
@@ -38,8 +38,8 @@ mystack_int32_push(MyStackInt32 *stack, int32_t val)
     if (stack->size > stack->capacity - 1) {
         stack->capacity *= 2;
         stack->items = (int32_t *)myrealloc(stack->items,
-                                                  sizeof(*(stack->items))
-                                                  * stack->capacity);
+                                            sizeof(*(stack->items))
+                                            * stack->capacity);
     }
 
     stack->items[stack->size++] = val;
