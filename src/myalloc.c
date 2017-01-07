@@ -6,25 +6,25 @@
 
 
 void *
-myalloc_calloc(size_t nitems, size_t size)
+mycalloc(size_t nitems, size_t size)
 {
     return calloc(nitems, size);
 }
 
 void
-myalloc_free(void *ptr)
+myfree(void *ptr)
 {
     free(ptr);
 }
 
 void *
-myalloc_malloc(size_t size)
+mymalloc(size_t size)
 {
     return malloc(size);
 }
 
 void *
-myalloc_realloc(void *ptr, size_t size)
+myrealloc(void *ptr, size_t size)
 {
     return realloc(ptr, size);
 }

@@ -13,9 +13,9 @@
 MyStackInt32 *
 mystack_int32_new(void)
 {
-    MyStackInt32 *stack = (MyStackInt32 *)myalloc_calloc(1, sizeof(*stack));
+    MyStackInt32 *stack = (MyStackInt32 *)mycalloc(1, sizeof(*stack));
     stack->capacity = MYSTACK_INIT_CAPACITY;
-    stack->items = (int32_t *)myalloc_calloc(stack->capacity,
+    stack->items = (int32_t *)mycalloc(stack->capacity,
                                              sizeof(*(stack->items)));
     return stack;
 }
@@ -23,8 +23,8 @@ mystack_int32_new(void)
 void
 mystack_int32_del(MyStackInt32 *stack)
 {
-    myalloc_free(stack->items);
-    myalloc_free(stack);
+    myfree(stack->items);
+    myfree(stack);
 }
 
 size_t
@@ -38,7 +38,7 @@ mystack_int32_push(MyStackInt32 *stack, int32_t val)
 {
     if (stack->size > stack->capacity - 1) {
         stack->capacity *= 2;
-        stack->items = (int32_t *)myalloc_realloc(stack->items,
+        stack->items = (int32_t *)myrealloc(stack->items,
                                                   sizeof(*(stack->items))
                                                   * stack->capacity);
     }
