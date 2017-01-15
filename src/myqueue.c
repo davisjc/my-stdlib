@@ -50,11 +50,9 @@ myqueue_int32_add(MyQueueInt32 *queue, int32_t val)
         }
     }
 
-    size_t back = (queue->front + queue->size - 1) % queue->capacity;
-    if (queue->size == 0)
-        back = 0;
+    size_t back_new = (queue->front + queue->size) % queue->capacity;
 
-    queue->items[(back + 1) % queue->capacity] = val;
+    queue->items[back_new] = val;
     queue->size++;
 }
 
